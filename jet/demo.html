@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://tucchhaa.github.io/demos/jet/build/jet.styles.min.css">
+    
+    <script src="https://tucchhaa.github.io/demos/jet/build/jet.bundle.min.js" type="text/javascript"></script>
+
+    <style>
+        body {
+            font-family: 'Roboto';
+            background-color: #FEF7FF;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            font-variant: small-caps;
+        }
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        h3 {
+            margin-top: 5px;
+            opacity: 0.7;
+        }
+
+        section {
+            margin-top: 40px;
+        }
+
+        h2 {
+            margin: 45px auto 15px;
+            width: 70%;
+            border-bottom: 1px solid #ada9a9;
+            padding-bottom: 10px;
+        }
+
+        .component-name {
+            font-variant: small-caps;
+            font-size: 20px;
+            text-align: center;
+            padding-bottom: 10px;
+            margin: 30px auto;
+            width: 40%;
+            border-bottom: 1px solid #c4c0c0;
+        }
+
+        .inline {
+            display: flex;
+            justify-content: center;
+        }
+        .inline > div {
+            margin-right: 25px;
+        }
+
+        .ul-container {
+            text-align: center;
+        }
+
+        ul {
+            margin: 20px auto;
+            display: inline-block;
+            text-align: left;
+        }
+
+        ul li {
+            margin: 15px;
+        }
+
+        .demo {
+            width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="indicator"></div>
+
+    <header>
+        <h1>Jet</h1>
+        <h3>Web Components</h3>
+    </header>
+
+    <section>
+        <h2>Demo</h2>
+
+
+        <div class="demo">
+            <p class="component-name">To do list demo</p>
+
+            <p class="codepen" data-height="400" data-default-tab="js,result" data-slug-hash="RwEXaad" data-user="FufelShmertz" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/FufelShmertz/pen/RwEXaad">
+                Untitled</a> by Eldar (<a href="https://codepen.io/FufelShmertz">@FufelShmertz</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </div>
+
+        <div class="demo">
+            <p class="component-name">State update demo</p>
+            
+            <p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="QWzeNeq" data-user="FufelShmertz" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/FufelShmertz/pen/QWzeNeq">
+                Jet - To Do List Demo</a> by Eldar (<a href="https://codepen.io/FufelShmertz">@FufelShmertz</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </div>
+    </section>
+
+    <section>
+        <h2>Button</h2>
+
+        <div>
+            <p class="component-name">Text button</p>
+
+            <div class="inline">
+                <div id="text-btn"></div>
+                <div id="text-icon-btn"></div>
+                <div id="text-disabled-icon-btn"></div>
+            </div>
+        </div>
+
+        <div>
+            <p class="component-name">Filled button</p>
+
+            <div class="inline">
+                <div id="filled-btn"></div>
+                <div id="filled-icon-btn"></div>
+                <div id="filled-disabled-icon-btn"></div>
+            </div>
+        </div>
+
+        <div>
+            <p class="component-name">Outlined button</p>
+
+            <div class="inline">
+                <div id="outlined-btn"></div>
+                <div id="outlined-icon-btn"></div>
+                <div id="outlined-disabled-icon-btn"></div>
+            </div>
+        </div>
+
+        <div>
+            <p class="component-name">Elevated button</p>
+
+            <div class="inline">
+                <div id="elevated-btn"></div>
+                <div id="elevated-icon-btn"></div>
+                <div id="elevated-disabled-icon-btn"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Text field</h2>
+
+        <div>
+            <p class="component-name">Filled text field</p>
+
+            <div class="inline">
+                <div id="filled-input"></div>
+                <div id="filled-disabled-input"></div>
+            </div>
+        </div>
+
+        <div>
+            <p class="component-name">Outlined text field</p>
+
+            <div class="inline">    
+                <div id="outlined-input"></div>
+                <div id="outlined-disabled-input"></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>
+            Components to be deleloped
+        </h2>
+
+        <div class="ul-container">
+            <ul>
+                <li>List</li>
+                <li>Select box</li>
+                <li>Data grid</li>
+                <li>Form</li>
+                <li>Text area</li>
+                <li>Drop down menu</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener('load', () => {
+            if(document.querySelectorAll('#indicator')?.length === 0)
+                return;
+
+            const buttons = {
+                '#text-btn': { text: 'Text', style: 'text' },
+                '#text-icon-btn': { icon: new Icon({ icon: 'favorite' }), text: 'Icon', style: 'text' },
+                '#text-disabled-icon-btn': { icon: new Icon({ icon: 'grade' }), text: 'Disabled', style: 'text', disabled: true },
+
+                '#filled-btn': { text: 'Filled', style: 'filled' },
+                '#filled-icon-btn': { icon: new Icon({ icon: 'favorite' }), text: 'Icon', style: 'filled' },
+                '#filled-disabled-icon-btn': { icon: new Icon({ icon: 'grade' }), text: 'Disabled', style: 'filled', disabled: true },
+
+                '#outlined-btn': { text: 'Filled', style: 'outlined' },
+                '#outlined-icon-btn': { icon: new Icon({ icon: 'favorite' }), text: 'Icon', style: 'outlined' },
+                '#outlined-disabled-icon-btn': { icon: new Icon({ icon: 'grade' }), text: 'Disabled', style: 'outlined', disabled: true },
+
+                '#elevated-btn': { text: 'Elevated', style: 'filled', elevated: true },
+                '#elevated-icon-btn': { icon: new Icon({ icon: 'favorite' }), text: 'Icon', style: 'filled', elevated: true },
+                '#elevated-disabled-icon-btn': { icon: new Icon({ icon: 'grade' }), text: 'Disabled', style: 'filled', disabled: true, elevated: true },
+            };
+
+            for(const button in buttons) {
+                const options = buttons[button];
+
+                Button.render(document.querySelector(button), options);
+            }
+
+            // ===
+
+            const inputs = {
+                '#filled-input': { style: 'filled', label: 'Label' },
+                '#filled-disabled-input': { style: 'filled', label: 'Label', disabled: true },
+
+                '#outlined-input': { style: 'outlined', label: 'Label' },
+                '#outlined-disabled-input': { style: 'outlined', label: 'Label', disabled: true },
+            };
+
+            for(const input in inputs) {
+                const options = inputs[input];
+
+                Input.render(document.querySelector(input), options);
+            }
+        });
+    </script>
+</body>
+</html>
