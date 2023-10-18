@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Project</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="./styles/index.css">
+
+    <script src="https://unpkg.com/systemjs@6.11.0/dist/s.js"></script>
+    <script src="https://unpkg.com/systemjs@6.11.0/dist/extras/named-register.js"></script> 
+    <script src="build/bundle.js"></script>
+
+    <script type="module">System.import('index');</script>
+</head>
+<body>
+    <div id="kanban-container">
+        <div id="kanban"></div>
+    </div>
+</body>
+</html>
